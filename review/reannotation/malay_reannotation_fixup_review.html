@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ms" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>AM-RAGBench — Malay Fix-up Re-Verification (5 records, corrected text)</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f7; color: #1d1d1f; }
+  header { background: #1d1d1f; color: white; padding: 16px 24px; position: sticky; top: 0; z-index: 10; }
+  header h1 { margin: 0 0 4px 0; font-size: 18px; }
+  .stats { font-size: 13px; color: #cfcfcf; }
+  .progress-bar { height: 6px; background: #444; border-radius: 3px; margin-top: 8px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #34c759; transition: width 0.2s; }
+  main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+  .card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .card.done { opacity: 0.55; }
+  .meta { font-size: 12px; color: #86868b; margin-bottom: 8px; }
+  .field-label { font-size: 12px; font-weight: 600; color: #6e6e73; margin-top: 12px; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .field-value { font-size: 16px; line-height: 1.6; padding: 10px 12px; background: #f5f5f7; border-radius: 6px; }
+  .field-value.passage { font-size: 18px; }
+  textarea { width: 100%; box-sizing: border-box; font-size: 14px; padding: 8px; border-radius: 6px; border: 1px solid #d2d2d7; font-family: inherit; margin-top: 4px; }
+  .actions { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  button.decision { padding: 10px 16px; border-radius: 8px; border: 1px solid #d2d2d7; background: white; cursor: pointer; font-size: 14px; }
+  button.decision.active-valid { background: #34c759; color: white; border-color: #34c759; }
+  button.decision.active-edit { background: #ff9500; color: white; border-color: #ff9500; }
+  button.decision.active-invalid { background: #ff3b30; color: white; border-color: #ff3b30; }
+  .edit-fields, .notes-field { display: none; margin-top: 12px; }
+  .edit-fields.show, .notes-field.show { display: block; }
+  .toolbar { position: sticky; top: 78px; background: #f5f5f7; padding: 12px 0; z-index: 9; display: flex; gap: 10px; align-items: center; }
+  .toolbar button { padding: 8px 14px; border-radius: 8px; border: 1px solid #d2d2d7; background: white; cursor: pointer; }
+  .toolbar button.primary { background: #007aff; color: white; border-color: #007aff; }
+  select.filter { padding: 8px; border-radius: 6px; border: 1px solid #d2d2d7; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AM-RAGBench — Malay Fix-up Re-Verification (5 records, corrected text)</h1>
+  <div class="stats" id="statsLine">Loading...</div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+</header>
+<main>
+  <div class="toolbar">
+    <button class="primary" id="exportBtn">Export CSV</button>
+    <select class="filter" id="filterSelect">
+      <option value="all">Show all</option>
+      <option value="undone">Show undecided only</option>
+      <option value="valid">Show marked valid</option>
+      <option value="edit">Show marked needs-edit</option>
+      <option value="invalid">Show marked invalid</option>
+    </select>
+    <span style="font-size:13px;color:#666;">Your decisions are independent — you are not shown any prior review status.</span>
+  </div>
+  <div id="cardsContainer"></div>
+</main>
+<script>
+var RECORDS = [{"id": "quran-1:4-ms-q1", "domain": "quran", "language": "ms", "question": "Siapakah yang menguasai pemerintahan pada hari tersebut?", "gold_answer": "Yang Menguasai pemerintahan (Allah)", "gold_passage_text": "Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).", "source_citation": "Quran 1:4 (Malay, Abdullah Muhammad Basmeih translation via Tanzil.net, CC BY 3.0)", "new_annotator_decision": "", "new_corrected_question": "", "new_corrected_answer": "", "new_annotator_notes": ""}, {"id": "quran-2:18-ms-q0", "domain": "quran", "language": "ms", "question": "Apakah keadaan yang dialami oleh mereka dalam pasusan tersebut?", "gold_answer": "dalam ayat tersebut", "gold_passage_text": "Mereka (seolah-olah orang yang) pekak, bisu dan buta; dengan keadaan itu mereka tidak dapat kembali (kepada kebenaran).", "source_citation": "Quran 2:18 (Malay, Abdullah Muhammad Basmeih translation via Tanzil.net, CC BY 3.0)", "new_annotator_decision": "", "new_corrected_question": "", "new_corrected_answer": "", "new_annotator_notes": ""}, {"id": "quran-2:21-ms-q0", "domain": "quran", "language": "ms", "question": "Ke atas siapa perintah beribadat tersebut ditujukan?", "gold_answer": "Sekalian manusia", "gold_passage_text": "Wahai sekalian manusia! Beribadatlah kepada Tuhan kamu yang telah menciptakan kamu dan orang-orang yang terdahulu daripada kamu, supaya kamu (menjadi orang-orang yang) bertaqwa.", "source_citation": "Quran 2:21 (Malay, Abdullah Muhammad Basmeih translation via Tanzil.net, CC BY 3.0)", "new_annotator_decision": "", "new_corrected_question": "", "new_corrected_answer": "", "new_annotator_notes": ""}, {"id": "quran-2:22-ms-q0", "domain": "quran", "language": "ms", "question": "Siapakah yang menjadikan bumi ini untuk kamu sebagai hamparan?", "gold_answer": "Dia (Allah)", "gold_passage_text": "Dia lah yang menjadikan bumi ini untuk kamu sebagai hamparan, dan langit (serta segala isinya) sebagai bangunan (yang dibina dengan kukuhnya); dan diturunkanNya air hujan dari langit, lalu dikeluarkanNya dengan air itu berjenis-jenis buah-buahan yang menjadi rezeki bagi kamu; maka janganlah kamu mengadakan bagi Allah, sebarang sekutu, padahal kamu semua mengetahui (bahawa Allah ialah Tuhan Yang Maha Esa).", "source_citation": "Quran 2:22 (Malay, Abdullah Muhammad Basmeih translation via Tanzil.net, CC BY 3.0)", "new_annotator_decision": "", "new_corrected_question": "", "new_corrected_answer": "", "new_annotator_notes": ""}, {"id": "ms-wiki-102-1-q1", "domain": "wiki", "language": "ms", "question": "Apa lokasi terjauh di mana tumbuhan ini telah mencapai penyebaran?", "gold_answer": "di Australia, khususnya Queensland", "gold_passage_text": "Tanaman ini berasal dari Asia Tenggara di mana ia menyebar luas mulai dari wilayah Tenasserim di Burma, Malaysia, Thailand, dan sebahagian kepulauan Indonesia termasuk pulau-pulau Sumatera, Jawa (terutamanya di bahagian barat,) Borneo, Sulawesi, Maluku hingga sejauh Papua dan Queensland di Australia.", "source_citation": "https://ms.wikipedia.org/?curid=102 (Wikipedia, CC BY-SA, article id 102)", "new_annotator_decision": "", "new_corrected_question": "", "new_corrected_answer": "", "new_annotator_notes": ""}];
+var STORAGE_KEY = 'amragbench_malay_reannotation_fixup_v1';
+
+function loadState() {
+  var raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) { try { return JSON.parse(raw); } catch (e) { return {}; } }
+  return {};
+}
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+var state = loadState();
+
+function getRec(id) {
+  if (!state[id]) state[id] = { decision: '', corrected_question: '', corrected_answer: '', notes: '' };
+  return state[id];
+}
+
+function updateStats() {
+  var total = RECORDS.length;
+  var done = 0;
+  for (var i = 0; i < RECORDS.length; i++) {
+    if (state[RECORDS[i].id] && state[RECORDS[i].id].decision) done++;
+  }
+  document.getElementById('statsLine').textContent = done + ' / ' + total + ' reviewed';
+  var pct = total ? Math.round(100 * done / total) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function setDecision(id, decision) {
+  var rec = getRec(id);
+  rec.decision = decision;
+  saveState(state);
+  render();
+}
+
+function updateField(id, field, value) {
+  var rec = getRec(id);
+  rec[field] = value;
+  saveState(state);
+}
+
+function cardHtml(r) {
+  var rec = getRec(r.id);
+  var isDone = !!rec.decision;
+  var validClass = rec.decision === 'valid' ? ' active-valid' : '';
+  var editClass = rec.decision === 'edit' ? ' active-edit' : '';
+  var invalidClass = rec.decision === 'invalid' ? ' active-invalid' : '';
+  var editShow = rec.decision === 'edit' ? ' show' : '';
+  var notesShow = rec.decision ? ' show' : '';
+
+  var html = '<div class="card' + (isDone ? ' done' : '') + '" data-id="' + r.id + '">';
+  html += '<div class="meta">' + r.id + ' &middot; ' + r.domain + ' &middot; ' + r.language + '</div>';
+  html += '<div class="field-label">Passage</div>';
+  html += '<div class="field-value passage">' + r.gold_passage_text + '</div>';
+  html += '<div class="field-label">Question</div>';
+  html += '<div class="field-value">' + r.question + '</div>';
+  html += '<div class="field-label">Answer</div>';
+  html += '<div class="field-value">' + r.gold_answer + '</div>';
+  html += '<div class="actions">';
+  html += '<button class="decision' + validClass + '" onclick="setDecision(\'' + r.id + '\',\'valid\')">Valid as-is</button>';
+  html += '<button class="decision' + editClass + '" onclick="setDecision(\'' + r.id + '\',\'edit\')">Needs edit</button>';
+  html += '<button class="decision' + invalidClass + '" onclick="setDecision(\'' + r.id + '\',\'invalid\')">Invalid / reject</button>';
+  html += '</div>';
+  html += '<div class="edit-fields' + editShow + '">';
+  html += '<div class="field-label">Corrected question (if needed)</div>';
+  html += '<textarea rows="2" oninput="updateField(\'' + r.id + '\',\'corrected_question\',this.value)">' + (rec.corrected_question || '') + '</textarea>';
+  html += '<div class="field-label">Corrected answer (if needed)</div>';
+  html += '<textarea rows="2" oninput="updateField(\'' + r.id + '\',\'corrected_answer\',this.value)">' + (rec.corrected_answer || '') + '</textarea>';
+  html += '</div>';
+  html += '<div class="notes-field' + notesShow + '">';
+  html += '<div class="field-label">Notes (optional)</div>';
+  html += '<textarea rows="2" oninput="updateField(\'' + r.id + '\',\'notes\',this.value)">' + (rec.notes || '') + '</textarea>';
+  html += '</div>';
+  html += '</div>';
+  return html;
+}
+
+function render() {
+  var filter = document.getElementById('filterSelect').value;
+  var container = document.getElementById('cardsContainer');
+  var htmlParts = [];
+  for (var i = 0; i < RECORDS.length; i++) {
+    var r = RECORDS[i];
+    var rec = getRec(r.id);
+    if (filter === 'undone' && rec.decision) continue;
+    if (filter === 'valid' && rec.decision !== 'valid') continue;
+    if (filter === 'edit' && rec.decision !== 'edit') continue;
+    if (filter === 'invalid' && rec.decision !== 'invalid') continue;
+    htmlParts.push(cardHtml(r));
+  }
+  container.innerHTML = htmlParts.join('');
+  updateStats();
+}
+
+function csvEscape(val) {
+  val = (val === undefined || val === null) ? '' : String(val);
+  if (val.indexOf(',') !== -1 || val.indexOf('"') !== -1 || val.indexOf('\n') !== -1) {
+    val = '"' + val.replace(/"/g, '""') + '"';
+  }
+  return val;
+}
+
+function exportCsv() {
+  var header = ['id','domain','language','question','gold_answer','gold_passage_text',
+                 'new_annotator_decision','new_corrected_question','new_corrected_answer','new_annotator_notes'];
+  var lines = [header.join(',')];
+  for (var i = 0; i < RECORDS.length; i++) {
+    var r = RECORDS[i];
+    var rec = getRec(r.id);
+    var row = [r.id, r.domain, r.language, r.question, r.gold_answer, r.gold_passage_text,
+               rec.decision, rec.corrected_question, rec.corrected_answer, rec.notes];
+    lines.push(row.map(csvEscape).join(','));
+  }
+  var csvContent = '﻿' + lines.join('\r\n');
+  var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'amragbench_malay_reannotation_fixup_v1_completed.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('exportBtn').addEventListener('click', exportCsv);
+document.getElementById('filterSelect').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

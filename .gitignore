@@ -1,0 +1,27 @@
+# --- Paper (kept out of GitHub while under anonymous TACL review) ---
+# TACL's anonymity-window policy disallows posting a non-anonymous preprint
+# of the submission while it's under consideration. Do not remove this
+# entry from .gitignore until after a final decision, at the earliest.
+paper/
+
+# --- Large raw source data (re-downloadable, not distributed via GitHub) ---
+# See README.md / docs/dataset_construction_plan.md for exact download sources
+# (Tanzil.net for Quran text, Wikipedia dumps for Arabic/Malay Wikipedia).
+raw_data/
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+
+# --- Editor/backup files ---
+*.bak
+*~
+*.swp

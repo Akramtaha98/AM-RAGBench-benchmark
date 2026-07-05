@@ -1,0 +1,602 @@
+{
+  "quran-1:3-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-1:4-ms-q1": {
+    "decision": "edit",
+    "domain": "quran"
+  },
+  "quran-2:13-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:14-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:16-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:18-ms-q0": {
+    "decision": "edit",
+    "domain": "quran"
+  },
+  "quran-2:19-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:2-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:20-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:21-ms-q0": {
+    "decision": "edit",
+    "domain": "quran"
+  },
+  "quran-2:22-ms-q0": {
+    "decision": "edit",
+    "domain": "quran"
+  },
+  "quran-2:23-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:23-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:27-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:28-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:32-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:34-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:36-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:37-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:37-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:41-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:42-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:5-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:55-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:55-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:59-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:60-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:61-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:62-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:62-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:63-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:75-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:77-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:79-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:8-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:80-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:84-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:85-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:85-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:86-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:88-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:89-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:9-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:9-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-1:2-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-1:2-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:1-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:10-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:11-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:15-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:15-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:17-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:21-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:25-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:25-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:3-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:39-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:4-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:43-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:46-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:50-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:50-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:52-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:58-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:6-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:70-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:71-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:72-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:73-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:76-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:79-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:8-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:84-ms-q0": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "quran-2:93-ms-q1": {
+    "decision": "approve",
+    "domain": "quran"
+  },
+  "ms-wiki-101-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-102-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-102-1-q1": {
+    "decision": "edit",
+    "domain": "wiki"
+  },
+  "ms-wiki-102-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-103-0-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-104-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-105-1-q2": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-107-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-111-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-18-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-18-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-25-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-26-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-26-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-28-0-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-28-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-30-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-30-2-q0": {
+    "decision": "reject",
+    "domain": "wiki"
+  },
+  "ms-wiki-32-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-33-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-39-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-40-0-q3": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-40-1-q0": {
+    "decision": "reject",
+    "domain": "wiki"
+  },
+  "ms-wiki-42-0-q2": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-43-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-44-0-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-44-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-45-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-45-1-q4": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-49-0-q2": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-50-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-56-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-56-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-61-0-q2": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-61-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-66-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-68-1-q0": {
+    "decision": "reject",
+    "domain": "wiki"
+  },
+  "ms-wiki-68-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-71-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-72-1-q0": {
+    "decision": "reject",
+    "domain": "wiki"
+  },
+  "ms-wiki-72-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-73-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-73-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-76-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-76-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-77-0-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-80-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-81-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-81-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-83-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-83-0-q2": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-83-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-85-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-87-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-87-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-88-2-q0": {
+    "decision": "reject",
+    "domain": "wiki"
+  },
+  "ms-wiki-89-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-90-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-92-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-94-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-97-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-97-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-102-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-102-2-q12": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-105-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-107-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-28-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-30-2-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-31-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-72-0-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-75-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-79-1-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-84-1-q1": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-85-2-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-87-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  },
+  "ms-wiki-99-0-q0": {
+    "decision": "approve",
+    "domain": "wiki"
+  }
+}
