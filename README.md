@@ -1,16 +1,24 @@
+<div align="center">
+
 # AM-RAGBench
 
-A human-verified Arabic–Malay benchmark for evaluating retrieval-augmented generation (RAG) faithfulness, submitted to TACL.
+**A human-verified Arabic–Malay benchmark for evaluating RAG faithfulness**
 
-**Note:** the manuscript itself (`paper/`) is intentionally not included in this repository while the submission is under anonymous TACL review — TACL's anonymity-window policy disallows posting a non-anonymous preprint of a paper while it's under consideration. This repository contains the benchmark, evaluation code, and annotation tooling only.
+[![License: Apache 2.0](https://img.shields.io/badge/code-Apache%202.0-blue.svg)](LICENSE)
+[![Data License: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](docs/DATA_LICENSE.md)
+[![Records](https://img.shields.io/badge/records-1%2C140-green.svg)](data/verified)
+[![Languages](https://img.shields.io/badge/languages-Arabic%20%7C%20Malay-orange.svg)](#what-this-is)
 
+</div>
+
+---
 
 ## What this is
 
-Almost all RAG faithfulness and hallucination evaluation to date has been done in English. AM-RAGBench pairs Arabic and Malay across two domains:
+Almost all retrieval-augmented generation (RAG) faithfulness and hallucination evaluation to date has been done in English. AM-RAGBench pairs Arabic and Malay across two domains:
 
-- **Specialized domain:** the Quran (Arabic source text + the Basmeih Malay translation, both from Tanzil.net, CC BY 3.0) — a domain where Arabic and Malay share real content overlap through an established translation tradition, rather than being an artificial pairing.
-- **General domain:** Arabic and Malay Wikipedia, as a control set.
+- **Specialized domain** — the Quran (Arabic source text + the Basmeih Malay translation, both from Tanzil.net, CC BY 3.0), where the two languages share real content overlap through an established translation tradition rather than an artificial pairing.
+- **General domain** — Arabic and Malay Wikipedia, as a control set.
 
 The benchmark totals **1,140 human-verified question-answer pairs**, each with a gold passage, a gold answer, and a verification decision (approve / edit / reject) made during construction.
 
@@ -18,11 +26,11 @@ The benchmark totals **1,140 human-verified question-answer pairs**, each with a
 
 This is a first-release, single-author project, built and evaluated end to end:
 
-1. **Construction.** Questions were drafted independently per language and per passage (not machine-translated from one language into the other, to avoid translation artifacts), then every one of the 1,140 candidate records was manually reviewed, approved, edited, or rejected by the author — a fluent speaker of both Arabic and Malay.
-2. **Evaluation.** A first-release pass with one configuration: a multilingual dense retriever (`paraphrase-multilingual-mpnet-base-v2`), a general multilingual generator (Qwen3.5, 2B, served locally via Ollama), and a separate, larger LLM judge (Qwen3.5, 4B) scoring faithfulness on a five-way label schema (Supported / Partially Supported / Unsupported / Contradicted / Abstained).
-3. **Judge validation.** Because the headline faithfulness numbers depend entirely on an LLM judge, its labels were checked against human annotation on a stratified sample (82 records) rather than trusted as ground truth. Overall agreement: 68.4%, but this varies sharply by label — 93.8% on Supported, only 31.2% on Unsupported — and that gap is reported and discussed explicitly rather than averaged away.
-4. **Statistical analysis.** Chi-square tests and Cramér's V for the retrieval/language effects on faithfulness, plus a cluster-robust GEE (passage-level clustering) reanalysis, since multiple questions share a source passage and aren't fully independent observations.
-5. **Independent second-annotator validation.** To address the single-annotator construction limitation, two additional annotators with no role in the original construction — one fluent in Arabic, one in Malay — independently re-reviewed a stratified sample of 150 records per language. While preparing this analysis a bug was found in the sampling script (it showed pre-correction draft text instead of the released corrected text for 22 Arabic and 5 Malay records); this was disclosed, fixed, and the affected records were re-reviewed by the same annotators against the correct text before finalizing the numbers. Final result across all 300 comparisons: **76.7% agreement (Cohen's κ = 0.262) for Arabic, 82.0% (κ = 0.192) for Malay** — agreement above chance but modest, with real disagreement concentrated in the harder edit/reject cases, reported as-is rather than smoothed over.
+- **Construction.** Questions were drafted independently per language and per passage (not machine-translated from one language into the other, to avoid translation artifacts), then every one of the 1,140 candidate records was manually reviewed, approved, edited, or rejected by a fluent speaker of both Arabic and Malay.
+- **Evaluation.** A first-release pass with one configuration: a multilingual dense retriever (`paraphrase-multilingual-mpnet-base-v2`), a general multilingual generator (Qwen3.5, 2B, served locally via Ollama), and a separate, larger LLM judge (Qwen3.5, 4B) scoring faithfulness on a five-way label schema (Supported / Partially Supported / Unsupported / Contradicted / Abstained).
+- **Judge validation.** Because the headline faithfulness numbers depend entirely on an LLM judge, its labels were checked against human annotation on a stratified sample (82 records) rather than trusted as ground truth. Overall agreement: 68.4%, but this varies sharply by label — 93.8% on Supported, only 31.2% on Unsupported — reported and discussed explicitly rather than averaged away.
+- **Statistical analysis.** Chi-square tests and Cramér's V for the retrieval/language effects on faithfulness, plus a cluster-robust GEE (passage-level clustering) reanalysis, since multiple questions share a source passage and aren't fully independent observations.
+- **Independent second-annotator validation.** Two additional annotators with no role in the original construction — one fluent in Arabic, one in Malay — independently re-reviewed a stratified sample of 150 records per language. A bug found in the sampling script (pre-correction draft text shown instead of the released corrected text, for 22 Arabic and 5 Malay records) was disclosed, fixed, and the affected records re-reviewed before finalizing the numbers. Final result across all 300 comparisons: **76.7% agreement (Cohen's κ = 0.262) for Arabic, 82.0% (κ = 0.192) for Malay** — agreement above chance but modest, with real disagreement concentrated in the harder edit/reject cases, reported as-is.
 
 ## Headline results
 
@@ -30,36 +38,40 @@ This is a first-release, single-author project, built and evaluated end to end:
 |---|---|---|---|---|
 | Retrieval recall@3 | 29.5% | 51.0% | 68.5% | 75.7% |
 
-Faithfulness tracks **retrieval success** far more than language: a retrieval hit roughly triples the Supported rate in both domains (confirmed within each language separately, and by cluster-robust regression), while the pooled language gap is smaller and concentrated in specific domain-outcome combinations rather than uniform. The specialized Quran domain is the harder case for both retrieval and generation, particularly in Arabic — plausibly reflecting short, formulaic, classical-register source text rather than a general Arabic-language weakness. Full numbers, significance tests, and effect sizes are in the accompanying manuscript (not included here during anonymous review; see note above).
+Faithfulness tracks **retrieval success** far more than language: a retrieval hit roughly triples the Supported rate in both domains (confirmed within each language separately, and by cluster-robust regression), while the pooled language gap is smaller and concentrated in specific domain-outcome combinations rather than uniform. The specialized Quran domain is the harder case for both retrieval and generation, particularly in Arabic — plausibly reflecting short, formulaic, classical-register source text rather than a general Arabic-language weakness.
 
 ## Repository layout
 
 ```
-src/               all pipeline code (extraction, question generation, retrieval,
-                   generation, LLM-judge faithfulness scoring, statistical analysis,
-                   reannotation sampling/agreement computation)
+src/                 pipeline code: extraction, question generation, retrieval,
+                     generation, LLM-judge faithfulness scoring, statistical
+                     analysis, reannotation sampling/agreement computation
 data/
-  passages/        passages extracted from the raw sources
-  drafts/           LLM-drafted candidate questions, pre-human-review
-  verified/         the released benchmark (verification_pass=primary records)
-review/            human review tooling (self-contained HTML annotation apps)
-  reannotation/     independent second-annotator validation tools + results
-results/            raw model outputs (retrieval + generation + judge labels)
-demo/               toy synthetic data proving the pipeline runs end to end
-docs/               dataset construction plan, paper outline, data license
-raw_data/           large upstream source dumps (gitignored, see below)
+  passages/          passages extracted from the raw sources
+  drafts/            LLM-drafted candidate questions, pre-human-review
+  verified/          the released benchmark (verification_pass=primary records)
+review/              human review tooling (self-contained HTML annotation apps)
+  reannotation/      independent second-annotator validation tools + results
+results/             raw model outputs (retrieval + generation + judge labels)
+demo/                toy synthetic data proving the pipeline runs end to end
+docs/                dataset construction plan, data license
 requirements.txt
 ```
 
-`paper/` (manuscript LaTeX source, bibliography, figures, compiled PDF) also exists locally but is excluded from this repository during anonymous review (see note at top).
+`raw_data/` (the Wikipedia XML dumps and Quran source text, ~2.4 GB) is intentionally excluded from version control — see **Reproducing from raw sources** below for download links. Everything needed to inspect or re-evaluate the released benchmark is already in `data/verified/` and does not require re-downloading anything.
 
-`raw_data/` (the Wikipedia XML dumps and Quran source text, ~2.4 GB) is excluded from version control — see **Reproducing from raw sources** below for exact download links. Everything needed to inspect or re-evaluate the *released* benchmark is in `data/verified/` and does not require re-downloading anything.
-
-## Reproducing from raw sources
+## Quickstart
 
 ```bash
 pip install -r requirements.txt
 
+# Inspect the released benchmark directly
+head -n 1 data/verified/quran_verified.jsonl
+```
+
+## Reproducing from raw sources
+
+```bash
 # 1. Download raw sources into raw_data/
 #    Quran (Arabic Uthmani + Simple text, Basmeih Malay translation): https://tanzil.net/download/
 #    Arabic Wikipedia dump:  https://dumps.wikimedia.org/arwiki/latest/arwiki-latest-pages-articles-multistream.xml.bz2
@@ -92,7 +104,7 @@ python3 src/analysis.py results/quran_results.jsonl results/wiki_results.jsonl -
 python3 src/compute_reannotation_agreement.py <completed.csv> <original_decisions.json>
 ```
 
-## Known limitations (see the accompanying manuscript for full discussion)
+## Known limitations
 
 - Single-author construction, now partially but not fully validated by independent second annotators on a 300-record stratified sample (not the full 1,140 records).
 - One retriever, one generator, one judge model in this first release; a fuller comparison matrix (sparse retrieval, region-tuned generators) is left to follow-up work.

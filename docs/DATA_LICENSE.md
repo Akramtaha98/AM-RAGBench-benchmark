@@ -5,7 +5,7 @@ The original contributions in this repository's `data/verified/` benchmark
 validation records under `review/`) are released under **CC BY 4.0**
 (https://creativecommons.org/licenses/by/4.0/). You may use, share, and adapt
 this material for any purpose, including commercially, provided you give
-appropriate credit (see `CITATION` in the top-level README).
+appropriate credit to this repository.
 
 This benchmark is built on top of two upstream text sources, each of which
 carries its own license that still applies to the passage text itself even
