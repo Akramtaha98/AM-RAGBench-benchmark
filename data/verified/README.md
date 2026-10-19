@@ -107,3 +107,9 @@ The questions, answers, and verification labels in this dataset are released und
 ## Citation
 
 If you use this dataset, please cite the repository.
+
+## Verification status and uncertainty flags
+
+"Human-verified" here means **primary human verification of every record by one bilingual annotator, with partial independent validation**: two independent second annotators re-reviewed a stratified sample of 150 records per language (300 records in total), not the full benchmark.
+
+`unadjudicated_disagreements.csv` lists the 44 sampled records on which the second annotator still disagrees with the primary decision after comparing edited records on equal terms (20 Arabic, 24 Malay). These disagreements have **not been adjudicated**. 39 of the records are in the released benchmark (`in_released_benchmark = yes`) and 5 were rejected in primary review and are not released. Users who need the most conservative subset can exclude the 39 released records listed in this file, or re-evaluate them.
