@@ -1,5 +1,7 @@
 ---
-license: cc-by-4.0
+license: other
+license_name: mixed-per-subset
+license_link: https://huggingface.co/datasets/Akram98/AM-RAGBench#licensing-information
 language:
 - ar
 - ms
@@ -99,10 +101,13 @@ Candidate questions were drafted independently per language and per passage (not
 
 ## Licensing Information
 
-The questions, answers, and verification labels in this dataset are released under **CC BY 4.0**. The underlying passage text carries its own upstream license, which still applies to that text specifically:
+Licences differ by subset. One file per licence is provided in `data/verified/licence_split/`; the combined files `quran_verified.jsonl` and `wiki_verified.jsonl` mix licences and are provided for convenience, so use the per-licence files when the licence matters.
 
-- Quran Arabic passage text: Tanzil.net, **CC BY 3.0** (attribution required, verbatim copies; see https://tanzil.net/docs/Text_License). Quran Malay (Basmeih) passage text: Tanzil.net translation terms, **non-commercial use only** (see https://tanzil.net/trans/).
-- Wikipedia passage text: **CC BY-SA 4.0** (attribution and share-alike required for redistribution of the `gold_passage_text` field specifically).
+| File | Records | Licence |
+|---|---|---|
+| `quran_ar_CC-BY-4.0.jsonl` | 173 | CC BY 4.0 for the questions, answers and labels. The Arabic passage text is Tanzil.net text under CC BY 3.0 (attribution required, verbatim copies; https://tanzil.net/docs/Text_License). |
+| `quran_ms_CC-BY-NC-4.0.jsonl` | 196 | CC BY-NC 4.0 (non-commercial research only). The Malay passage text is the Basmeih translation distributed by Tanzil.net for non-commercial use only; permission from the translator or publisher has not been obtained for other uses (https://tanzil.net/trans/). |
+| `wiki_CC-BY-SA-4.0.jsonl` | 771 | CC BY-SA 4.0, including the questions and answers derived from the Wikipedia passages. Records carry the Wikipedia article identifier; revision identifiers were not stored. |
 
 ## Citation
 
