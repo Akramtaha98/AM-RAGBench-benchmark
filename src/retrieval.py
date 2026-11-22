@@ -69,8 +69,11 @@ class DenseRetriever:
         self.passage_ids = list(passage_ids)
         self.passages = list(passages)
         self.model = SentenceTransformer(model_name)
+        # E5 models need "query: " / "passage: " prefixes (as in the paper's E5 setting).
+        is_e5 = "e5" in model_name.lower()
+        self._qp, self._pp = ("query: ", "passage: ") if is_e5 else ("", "")
 
-        embeddings = self.model.encode(self.passages, normalize_embeddings=True,
+        embeddings = self.model.encode([self._pp + p for p in self.passages], normalize_embeddings=True,
                                         show_progress_bar=False)
         embeddings = np.asarray(embeddings, dtype="float32")
         self.index = faiss.IndexFlatIP(embeddings.shape[1])
@@ -79,7 +82,7 @@ class DenseRetriever:
     def retrieve(self, query: str, k: int = 5) -> list[RetrievedPassage]:
         import numpy as np
 
-        q_emb = self.model.encode([query], normalize_embeddings=True,
+        q_emb = self.model.encode([self._qp + query], normalize_embeddings=True,
                                    show_progress_bar=False)
         q_emb = np.asarray(q_emb, dtype="float32")
         scores, idx = self.index.search(q_emb, k)
@@ -89,9 +92,9 @@ class DenseRetriever:
         ]
 
 
-def build_retriever(kind: str, passage_ids: Sequence[str], passages: Sequence[str]):
+def build_retriever(kind: str, passage_ids: Sequence[str], passages: Sequence[str], model_name: str | None = None):
     if kind == "bm25":
         return BM25Retriever(passage_ids, passages)
     if kind == "dense":
-        return DenseRetriever(passage_ids, passages)
+        return DenseRetriever(passage_ids, passages, **({"model_name": model_name} if model_name else {}))
     raise ValueError(f"unknown retriever kind: {kind}")

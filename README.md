@@ -84,7 +84,7 @@ Provided as two files: `quran_verified.jsonl` (specialized domain) and `wiki_ver
 
 ### Source Data
 
-- **Quran text:** Arabic source text and the Basmeih Malay translation, both from [Tanzil.net](https://tanzil.net), licensed CC BY 3.0.
+- **Quran text:** Arabic source text from [Tanzil.net](https://tanzil.net), distributed under Creative Commons Attribution 3.0 terms (verbatim copies with attribution). The Basmeih Malay translation, also from Tanzil.net, is subject to Tanzil's translation terms: non-commercial use only, and permission from the translator or publisher is required for other uses. We have not obtained such permission, so the Malay Quran passages (and records derived from them) should be used for non-commercial research only.
 - **Wikipedia text:** Arabic and Malay Wikipedia, licensed CC BY-SA 4.0.
 
 ### Annotations
@@ -101,9 +101,13 @@ Candidate questions were drafted independently per language and per passage (not
 
 The questions, answers, and verification labels in this dataset are released under **CC BY 4.0**. The underlying passage text carries its own upstream license, which still applies to that text specifically:
 
-- Quran passage text: Tanzil.net, **CC BY 3.0** (attribution required; see https://tanzil.net/docs/licensing).
+- Quran Arabic passage text: Tanzil.net, **CC BY 3.0** (attribution required, verbatim copies; see https://tanzil.net/docs/Text_License). Quran Malay (Basmeih) passage text: Tanzil.net translation terms, **non-commercial use only** (see https://tanzil.net/trans/).
 - Wikipedia passage text: **CC BY-SA 4.0** (attribution and share-alike required for redistribution of the `gold_passage_text` field specifically).
 
 ## Citation
 
 If you use this dataset, please cite the repository.
+
+## Answerability flags
+
+`answerability_flags.csv` lists 36 released records (14 Quran, 22 Wikipedia) in which the gold answer shares no word with the gold passage. This is a lexical heuristic, so the list contains candidates for manual answerability review, not confirmed errors, and it can miss unanswerable records whose answers share words with the passage. Example: `quran-2:18-ar-q0` has the passage "صم بكم عمي فهم لا يرجعون" and the answer "المنافقين", which the verse alone does not state. These records have not been corrected or removed pending human review.
