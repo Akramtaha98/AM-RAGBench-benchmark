@@ -40,6 +40,13 @@ def main():
                           "recommended over 2b for this role since judgment quality "
                           "matters here, unlike question drafting where every record "
                           "gets human review anyway.")
+    ap.add_argument("--dense-model", default=None,
+                     help="sentence-transformers model for --retriever dense "
+                          "(default: paraphrase-multilingual-mpnet-base-v2)")
+    ap.add_argument("--oracle", action="store_true",
+                     help="oracle-retrieval condition: give the generator the gold passage "
+                          "instead of the retriever's top-1 (separates retrieval failure "
+                          "from generation failure)")
     ap.add_argument("--k", type=int, default=3)
     ap.add_argument("--out", default="demo/results.jsonl")
     args = ap.parse_args()
@@ -51,13 +58,16 @@ def main():
     # for this benchmark -- the point is testing within-language RAG faithfulness).
     by_lang_passages = defaultdict(dict)
     for r in records:
-        by_lang_passages[r.language][r.gold_passage_id] = r.gold_passage_text
+        # Passage identity = passage text. gold_passage_id is per-question, so indexing by id
+        # would insert the same passage several times and penalise recall@k (see paper,
+        # review-response analysis).
+        by_lang_passages[r.language][r.gold_passage_text.strip()] = r.gold_passage_text
 
     retrievers = {}
     for lang, passage_map in by_lang_passages.items():
         ids = list(passage_map.keys())
         texts = list(passage_map.values())
-        retrievers[lang] = build_retriever(args.retriever, ids, texts)
+        retrievers[lang] = build_retriever(args.retriever, ids, texts, model_name=args.dense_model)
     print(f"Built {args.retriever} retriever for languages: {list(retrievers.keys())}")
 
     gen_kwargs = {}
@@ -75,12 +85,14 @@ def main():
     for r in records:
         retrieved = retrievers[r.language].retrieve(r.question, k=args.k)
         retrieved_ids = [p.passage_id for p in retrieved]
-        hit = r.gold_passage_id in retrieved_ids
+        gold_key = r.gold_passage_text.strip()
+        hit = gold_key in retrieved_ids                       # recall@k
+        top1_hit = bool(retrieved) and retrieved_ids[0] == gold_key   # what the generator actually sees
         retrieval_hits += int(hit)
 
         # Oracle-retrieval condition: force the gold passage regardless of retriever output.
         # This is what separates "retrieval failure" from "generation failure" (RQ3).
-        top_passage = retrieved[0].text if retrieved else r.gold_passage_text
+        top_passage = r.gold_passage_text if args.oracle else (retrieved[0].text if retrieved else r.gold_passage_text)
 
         if args.generator == "mock":
             gen = generator.generate(r.question, top_passage, gold_answer=r.gold_answer)
@@ -96,6 +108,8 @@ def main():
             "passage": top_passage,
             "gold_answer": r.gold_answer,
             "retrieval_hit": hit,
+            "top1_hit": top1_hit,
+            "oracle": bool(args.oracle),
         })
 
     judge = None
