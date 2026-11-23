@@ -91,7 +91,7 @@ Provided in `data/verified/` as `quran_verified.jsonl` (specialized domain) and 
 
 ### Annotations
 
-Candidate questions were drafted independently per language and per passage (not machine-translated from one language into the other, to avoid translation artifacts). Every candidate record was then manually reviewed by a fluent speaker of both Arabic and Malay and either approved as-is, edited, or rejected. Only records that passed this verification (`verification_pass=primary`) are released. A subsequent, independent second-annotator validation (one additional annotator per language) re-reviewed a stratified sample of these decisions to check inter-annotator reliability; see the associated evaluation code repository for that analysis.
+Candidate questions were drafted independently per language and per passage (not machine-translated from one language into the other, to avoid translation artifacts). Every candidate record was then manually reviewed by a fluent speaker of both Arabic and Malay and either approved as-is, edited, or rejected. Only records that passed this verification (`verification_pass=primary`) are released. A second pass over a stratified sample of 300 of these decisions was produced with AI assistance; it is a consistency check, not independent human verification (see the paper, Section 4.5). Independent human agreement was measured separately, on 120 of the 320 generated answers used to calibrate the LLM judge (`results/human_eval/pass2_agreement.json`).
 
 ## Considerations for Using the Data
 
