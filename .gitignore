@@ -25,3 +25,13 @@ Thumbs.db
 *.bak
 *~
 *.swp
+
+# --- Computation submission and private annotation material ---
+Computation work/
+MDPI work/
+response/
+results/human_eval/key_private.csv
+results/human_eval/*_key_private.csv
+results/human_eval/annotation_*.xlsx
+results/human_eval/received/
+results/human_eval/blank_templates/

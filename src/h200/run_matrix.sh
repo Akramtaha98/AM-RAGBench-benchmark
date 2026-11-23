@@ -10,7 +10,6 @@ MODELS=(
   "Qwen/Qwen2.5-7B-Instruct"
   "meta-llama/Llama-3.1-8B-Instruct"
   "google/gemma-2-9b-it"
-  "inceptionai/jais-family-13b-chat"
   "sail/Sailor2-8B-Chat"
   "Qwen/Qwen2.5-32B-Instruct"
 )

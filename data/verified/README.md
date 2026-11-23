@@ -19,28 +19,47 @@ tags:
 - malay
 - quran
 - wikipedia
+configs:
+- config_name: quran_ar
+  data_files: quran_ar_CC-BY-4.0.jsonl
+- config_name: quran_ms
+  data_files: quran_ms_CC-BY-NC-4.0.jsonl
+- config_name: wiki
+  data_files: wiki_CC-BY-SA-4.0.jsonl
 ---
 
 # Dataset Card for AM-RAGBench
 
+**This dataset does not have a single licence.** Each of the three data files has its own terms (see [Licensing Information](#licensing-information)). Check the file before reuse, in particular before any commercial use.
+
 ## Dataset Summary
 
-AM-RAGBench is a human-verified question-answering benchmark for evaluating retrieval-augmented generation (RAG) faithfulness in Arabic and Malay. It spans two domains: a specialized domain (the Quran, using the Arabic source text and the Basmeih Malay translation) and a general domain (Arabic and Malay Wikipedia, used as a control set). The benchmark contains 1,140 question-answer pairs, each paired with a gold passage and a human verification decision made during construction.
+AM-RAGBench is a human-reviewed Arabic–Malay question-answering benchmark for evaluating retrieval-augmented generation (RAG) faithfulness. It has two domains: a specialized domain (the Quran, with the Arabic source text and the Basmeih Malay translation) and a general domain (Arabic and Malay Wikipedia, used as a control set). It contains 1,140 question–answer pairs, each with a gold passage and the human decision recorded during construction. Model outputs and faithfulness labels are not part of this dataset; they are in the code repository.
 
-Almost all existing RAG faithfulness and hallucination benchmarks are English-only. AM-RAGBench targets a bilingual pair chosen for a real, non-arbitrary reason: Arabic and Malay share substantial content overlap through the Quran's translation tradition, while remaining typologically distant (Semitic vs. Austronesian, different scripts), which supports faithfulness research beyond high-resource Western languages.
+- Paper (title): *AM-RAGBench: An Arabic–Malay Benchmark for Evaluating Retrieval-Augmented Generation Faithfulness* (submitted to *Computation*, MDPI; the citation will be updated when published).
+- Code and evaluation: https://github.com/Akramtaha98/AM-RAGBench-benchmark
 
 ## Supported Tasks
 
-- **Question Answering / RAG faithfulness evaluation:** given a question and a retrieved passage, generate an answer and evaluate whether it is supported by the passage. This dataset provides the gold questions, answers, and passages needed for that evaluation; it does not itself include model outputs or faithfulness labels.
+Question answering and RAG faithfulness evaluation: given a question and a retrieved passage, generate an answer and judge whether it is supported by the passage and whether it is correct against the gold answer. The dataset supplies the gold questions, answers, and passages. It defines no train/dev/test split and is meant for evaluation only.
 
 ## Languages
 
-- Arabic (`ar`)
-- Malay (`ms`)
+Arabic (`ar`) and Malay (`ms`).
 
 ## Dataset Structure
 
-### Data Instances
+### Files
+
+| File (config) | Records | Domain, language |
+|---|---|---|
+| `quran_ar_CC-BY-4.0.jsonl` (`quran_ar`) | 173 | Quran, Arabic |
+| `quran_ms_CC-BY-NC-4.0.jsonl` (`quran_ms`) | 196 | Quran, Malay |
+| `wiki_CC-BY-SA-4.0.jsonl` (`wiki`) | 771 | Wikipedia, 384 Arabic and 387 Malay |
+| `unadjudicated_disagreements.csv` | 44 rows | Second-annotator disagreements (see below) |
+| `answerability_flags.csv` | 36 records | Records whose gold answer shares no word with the gold passage (candidates for manual review) |
+
+### Data Instance
 
 ```json
 {
@@ -62,63 +81,68 @@ Almost all existing RAG faithfulness and hallucination benchmarks are English-on
 | Field | Type | Description |
 |---|---|---|
 | `id` | string | Unique record identifier. |
-| `language` | string | `ar` (Arabic) or `ms` (Malay). |
-| `domain` | string | `quran` (specialized domain) or `wiki` (general domain). |
+| `language` | string | `ar` or `ms`. |
+| `domain` | string | `quran` or `wikipedia_general`. |
 | `question` | string | The question, in the record's language. |
 | `gold_passage_id` | string | Identifier of the source passage the question was drafted from. |
-| `gold_passage_text` | string | The gold passage text the answer should be supported by. |
-| `gold_answer` | string | The verified gold answer. |
-| `source_citation` | string | Exact source and translation/edition for the passage, so claims can be traced to a specific, checkable source. |
-| `annotator_id` | string | Anonymized identifier of the human annotator who verified the record. |
-| `verification_pass` | string | Verification tier; released records carry `primary`. |
-
-### Data Splits
-
-| Domain | Arabic | Malay | Total |
-|---|---|---|---|
-| Quran (specialized) | 173 | 196 | 369 |
-| Wikipedia (general) | 384 | 387 | 771 |
-| **Total** | **557** | **583** | **1,140** |
-
-Provided as two files: `quran_verified.jsonl` (specialized domain) and `wiki_verified.jsonl` (general domain). No train/dev/test split is defined; this is an evaluation-only benchmark.
+| `gold_passage_text` | string | The gold passage the answer should be supported by. |
+| `gold_answer` | string | The reviewed gold answer. |
+| `source_citation` | string | Source and edition of the passage (for Wikipedia, the article identifier). |
+| `annotator_id` | string | Anonymized identifier of the reviewing annotator. |
+| `verification_pass` | string | Review tier; released records carry `primary`. |
 
 ## Dataset Creation
 
 ### Source Data
 
-- **Quran text:** Arabic source text from [Tanzil.net](https://tanzil.net), distributed under Creative Commons Attribution 3.0 terms (verbatim copies with attribution). The Basmeih Malay translation, also from Tanzil.net, is subject to Tanzil's translation terms: non-commercial use only, and permission from the translator or publisher is required for other uses. We have not obtained such permission, so the Malay Quran passages (and records derived from them) should be used for non-commercial research only.
-- **Wikipedia text:** Arabic and Malay Wikipedia, licensed CC BY-SA 4.0.
+- **Quran, Arabic:** text from [Tanzil.net](https://tanzil.net), distributed under CC BY 3.0 (verbatim copies, attribution required; https://tanzil.net/docs/Text_License).
+- **Quran, Malay:** the Basmeih translation as distributed by Tanzil.net. Tanzil states that translations are for non-commercial use and that permission from the translator or publisher is needed for other uses (https://tanzil.net/trans/). We have not obtained such permission, and we have no right to relicense the translation itself.
+- **Wikipedia:** Arabic and Malay Wikipedia articles, CC BY-SA 4.0. Records carry the article identifier. **Revision identifiers were not stored**, so exact re-extraction of the passages is not guaranteed.
 
 ### Annotations
 
-Candidate questions were drafted independently per language and per passage (not machine-translated from one language into the other, to avoid translation artifacts). Every candidate record was then manually reviewed by a fluent speaker of both Arabic and Malay and either approved as-is, edited, or rejected. Only records that passed this verification (`verification_pass=primary`) are released. A subsequent, independent second-annotator validation (one additional annotator per language) re-reviewed a stratified sample of these decisions to check inter-annotator reliability; see the associated evaluation code repository for that analysis.
+Candidate questions were drafted with a language model (Qwen3.5, 4B parameters), independently per language and per passage and not translated between languages. A fluent speaker of both languages (the author) reviewed every candidate and approved, edited, or rejected it. Only records that passed (`verification_pass=primary`) are released.
+
+### Validation
+
+- **Independent second annotators.** Two annotators (volunteers with a computer-science background, one fluent in Arabic and one in Malay) re-reviewed a stratified sample of 150 records per language (300 in total) without seeing the original decision. Observed agreement with the original decision on the released text is 86.7% (Arabic) and 84.0% (Malay); Cohen's kappa is low (0.36 and 0.20) because almost all records are approved, and Gwet's AC1 is 0.85 and 0.82.
+- **Unresolved disagreements.** `unadjudicated_disagreements.csv` lists the 44 sampled records on which the second annotator still disagrees (20 Arabic, 24 Malay). These have **not been adjudicated**. 39 are in the released data (`in_released_benchmark = yes`); 5 were rejected in primary review and are not released. Users who need the most conservative subset can exclude the 39 released records or re-evaluate them.
+- **Answerability flags.** `answerability_flags.csv` lists 36 records whose gold answer shares no word with the gold passage. This lexical screen is a list of candidates for review, not a verified error rate. Excluding these records and the 39 unresolved ones does not change the main results of the paper.
 
 ## Considerations for Using the Data
 
-- Verification confirmed factual and semantic soundness of each question-answer-passage triple. For the Quran sub-corpus, this is not a claim of interpretive or theological authority, and general Arabic fluency is a different competency from expertise in Quranic exegesis specifically.
-- The benchmark is drawn from two domains only (a specialized religious-text domain and general encyclopedic text); results should not be assumed to generalize to arbitrary domains without further validation.
-- Construction verification was originally performed by a single primary annotator per the process above, later partially cross-checked by independent second annotators on a sample.
+- **Not a religious authority.** Review covered factual and semantic soundness of each question–answer–passage triple. It is not a claim of tafsīr or other theological authority, and the Quran subset has not been reviewed by a specialist in Quranic exegesis. Do not use model outputs evaluated with this benchmark as religious guidance.
+- **Unmatched question sets.** Arabic and Malay questions were drafted independently, so the two languages are compared on comparable but not translation-matched questions. Language is confounded with question difficulty and passage choice.
+- **Single primary reviewer.** All records were first reviewed by one person; independent review covers a 300-record sample.
+- **Text artifacts.** An automatic screen found empty brackets left from stripped markup in 14 Arabic and 69 Malay Wikipedia records; these were not normalized.
+- **Scope.** The benchmark covers two domains and two languages and should not be assumed to generalize.
 
 ## Licensing Information
 
-Licences differ by subset. One file per licence is provided in `data/verified/licence_split/`; the combined files `quran_verified.jsonl` and `wiki_verified.jsonl` mix licences and are provided for convenience, so use the per-licence files when the licence matters.
+Check the licence of the file you use.
 
-| File | Records | Licence |
+| File | Questions, answers, and other annotations | Passage text embedded in the records |
 |---|---|---|
-| `quran_ar_CC-BY-4.0.jsonl` | 173 | CC BY 4.0 for the questions, answers and labels. The Arabic passage text is Tanzil.net text under CC BY 3.0 (attribution required, verbatim copies; https://tanzil.net/docs/Text_License). |
-| `quran_ms_CC-BY-NC-4.0.jsonl` | 196 | CC BY-NC 4.0 (non-commercial research only). The Malay passage text is the Basmeih translation distributed by Tanzil.net for non-commercial use only; permission from the translator or publisher has not been obtained for other uses (https://tanzil.net/trans/). |
-| `wiki_CC-BY-SA-4.0.jsonl` | 771 | CC BY-SA 4.0, including the questions and answers derived from the Wikipedia passages. Records carry the Wikipedia article identifier; revision identifiers were not stored. |
+| `quran_ar_CC-BY-4.0.jsonl` | CC BY 4.0 | Tanzil.net Arabic text, CC BY 3.0: attribution required, verbatim copies only. |
+| `quran_ms_CC-BY-NC-4.0.jsonl` | CC BY-NC 4.0 (non-commercial research use only) | Basmeih Malay translation, distributed by Tanzil.net for non-commercial use only. **We grant no licence to the translation itself**; its terms are set by the translator, the publisher, and Tanzil. Gold answers in this file quote the translation and are covered by the same restriction. |
+| `wiki_CC-BY-SA-4.0.jsonl` | CC BY-SA 4.0, including questions and answers derived from the passages | Wikipedia text, CC BY-SA 4.0. Attribute the Wikipedia articles named in `source_citation`; revision identifiers are not available. |
+| `unadjudicated_disagreements.csv`, `answerability_flags.csv` | CC BY 4.0 (annotation metadata only; the quoted passage excerpts and questions keep the licence of the file they come from) | — |
+
+The earlier combined files `quran_verified.jsonl` and `wiki_verified.jsonl` mixed these terms under one licence statement and have been removed. If you downloaded them, use the per-licence files instead.
 
 ## Citation
 
-If you use this dataset, please cite the repository.
+```bibtex
+@misc{zeyad2026amragbench,
+  title  = {{AM-RAGBench}: An Arabic--Malay Benchmark for Evaluating Retrieval-Augmented Generation Faithfulness},
+  author = {Zeyad, Akram Taha},
+  year   = {2026},
+  note   = {Submitted to Computation (MDPI). Dataset: https://huggingface.co/datasets/Akram98/AM-RAGBench}
+}
+```
 
-## Verification status and uncertainty flags
+Please also cite Tanzil.net and the Wikipedia articles where your use requires attribution.
 
-"Human-verified" here means **primary human verification of every record by one bilingual annotator, with partial independent validation**: two independent second annotators re-reviewed a stratified sample of 150 records per language (300 records in total), not the full benchmark.
+## Contact
 
-`unadjudicated_disagreements.csv` lists the 44 sampled records on which the second annotator still disagrees with the primary decision after comparing edited records on equal terms (20 Arabic, 24 Malay). These disagreements have **not been adjudicated**. 39 of the records are in the released benchmark (`in_released_benchmark = yes`) and 5 were rejected in primary review and are not released. Users who need the most conservative subset can exclude the 39 released records listed in this file, or re-evaluate them.
-
-## Answerability flags
-
-`answerability_flags.csv` lists 36 released records (14 Quran, 22 Wikipedia) in which the gold answer shares no word with the gold passage. This is a lexical heuristic, so the list contains candidates for manual answerability review, not confirmed errors, and it can miss unanswerable records whose answers share words with the passage. Example: `quran-2:18-ar-q0` has the passage "صم بكم عمي فهم لا يرجعون" and the answer "المنافقين", which the verse alone does not state. These records have not been corrected or removed pending human review.
+Akram Taha Zeyad, University of Technology, Baghdad, Iraq. Issues and corrections: https://github.com/Akramtaha98/AM-RAGBench-benchmark/issues

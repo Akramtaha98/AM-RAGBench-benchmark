@@ -1,0 +1,427 @@
+{
+ "agreement": {
+  "arabic|orig3": {
+   "n": 150,
+   "AC1": 0.7230464886251237,
+   "AC1_ci": [
+    0.6308383614404531,
+    0.8037622119785569
+   ],
+   "PABAK": 0.6500000000000001
+  },
+  "arabic|A_edit_as_approve": {
+   "n": 150,
+   "AC1": 0.8517218796723054,
+   "AC1_ci": [
+    0.7836325649315987,
+    0.9124350709659683
+   ],
+   "PABAK": 0.8
+  },
+  "arabic|B_binary_validity": {
+   "n": 150,
+   "AC1": 0.8424935753958385,
+   "AC1_ci": [
+    0.7572254335260115,
+    0.9098326098384564
+   ],
+   "PABAK": 0.7466666666666666
+  },
+  "malay|orig3": {
+   "n": 150,
+   "AC1": 0.7979747593156082,
+   "AC1_ci": [
+    0.7241175912419386,
+    0.8690099334133828
+   ],
+   "PABAK": 0.73
+  },
+  "malay|A_edit_as_approve": {
+   "n": 150,
+   "AC1": 0.8231457941859179,
+   "AC1_ci": [
+    0.7493734320171205,
+    0.8864859783562948
+   ],
+   "PABAK": 0.76
+  },
+  "malay|B_binary_validity": {
+   "n": 150,
+   "AC1": 0.8281552603584191,
+   "AC1_ci": [
+    0.7496484410629761,
+    0.8977049180327868
+   ],
+   "PABAK": 0.72
+  }
+ },
+ "n_flag": 36,
+ "n_dis_released": 39,
+ "n_overlap": 4,
+ "twobytwo": {
+  "quran|goldmpnet": {
+   "n": 1845,
+   "not_faithful|correct": [
+    47,
+    2.5474254742547426
+   ],
+   "not_faithful|incorrect": [
+    820,
+    44.44444444444444
+   ],
+   "faithful|correct": [
+    650,
+    35.230352303523034
+   ],
+   "faithful|incorrect": [
+    328,
+    17.77777777777778
+   ]
+  },
+  "quran|oracle": {
+   "n": 1845,
+   "faithful|correct": [
+    1595,
+    86.44986449864498
+   ],
+   "faithful|incorrect": [
+    95,
+    5.149051490514905
+   ],
+   "not_faithful|incorrect": [
+    98,
+    5.311653116531165
+   ],
+   "not_faithful|correct": [
+    57,
+    3.089430894308943
+   ]
+  },
+  "wiki|goldmpnet": {
+   "n": 3855,
+   "faithful|correct": [
+    1930,
+    50.06485084306096
+   ],
+   "not_faithful|incorrect": [
+    1366,
+    35.43450064850843
+   ],
+   "faithful|incorrect": [
+    366,
+    9.494163424124514
+   ],
+   "not_faithful|correct": [
+    193,
+    5.006485084306096
+   ]
+  },
+  "wiki|oracle": {
+   "n": 3855,
+   "faithful|correct": [
+    2638,
+    68.43060959792477
+   ],
+   "not_faithful|incorrect": [
+    649,
+    16.835278858625163
+   ],
+   "faithful|incorrect": [
+    308,
+    7.9896238651102465
+   ],
+   "not_faithful|correct": [
+    260,
+    6.744487678339818
+   ]
+  }
+ },
+ "sensitivity": {
+  "quran|all": {
+   "n_miss_records_per_model": 233,
+   "oracle_minus_base_SUP_miss_by_model": [
+    64.37768240343347,
+    69.09871244635193,
+    59.656652360515025,
+    60.08583690987125,
+    51.50214592274678
+   ],
+   "min": 51.50214592274678,
+   "max": 69.09871244635193
+  },
+  "quran|excl_flags": {
+   "n_miss_records_per_model": 220,
+   "oracle_minus_base_SUP_miss_by_model": [
+    63.63636363636363,
+    69.0909090909091,
+    60.00000000000001,
+    60.00000000000001,
+    52.27272727272727
+   ],
+   "min": 52.27272727272727,
+   "max": 69.0909090909091
+  },
+  "quran|excl_disagreements": {
+   "n_miss_records_per_model": 230,
+   "oracle_minus_base_SUP_miss_by_model": [
+    64.34782608695653,
+    68.69565217391305,
+    59.56521739130436,
+    59.56521739130436,
+    52.17391304347827
+   ],
+   "min": 52.17391304347827,
+   "max": 68.69565217391305
+  },
+  "quran|excl_both": {
+   "n_miss_records_per_model": 219,
+   "oracle_minus_base_SUP_miss_by_model": [
+    63.926940639269404,
+    68.94977168949772,
+    60.273972602739725,
+    59.817351598173516,
+    52.51141552511416
+   ],
+   "min": 52.51141552511416,
+   "max": 68.94977168949772
+  },
+  "wiki|all": {
+   "n_miss_records_per_model": 232,
+   "oracle_minus_base_SUP_miss_by_model": [
+    59.05172413793104,
+    54.3103448275862,
+    54.310344827586206,
+    56.896551724137936,
+    57.327586206896555
+   ],
+   "min": 54.3103448275862,
+   "max": 59.05172413793104
+  },
+  "wiki|excl_flags": {
+   "n_miss_records_per_model": 223,
+   "oracle_minus_base_SUP_miss_by_model": [
+    59.19282511210763,
+    53.36322869955157,
+    52.91479820627802,
+    56.05381165919282,
+    56.05381165919283
+   ],
+   "min": 52.91479820627802,
+   "max": 59.19282511210763
+  },
+  "wiki|excl_disagreements": {
+   "n_miss_records_per_model": 226,
+   "oracle_minus_base_SUP_miss_by_model": [
+    58.849557522123895,
+    54.86725663716815,
+    53.98230088495575,
+    57.07964601769911,
+    57.52212389380531
+   ],
+   "min": 53.98230088495575,
+   "max": 58.849557522123895
+  },
+  "wiki|excl_both": {
+   "n_miss_records_per_model": 218,
+   "oracle_minus_base_SUP_miss_by_model": [
+    59.1743119266055,
+    54.128440366972484,
+    52.75229357798166,
+    56.42201834862385,
+    56.42201834862386
+   ],
+   "min": 52.75229357798166,
+   "max": 59.1743119266055
+  }
+ },
+ "interaction": {
+  "quran": {
+   "hit": {
+    "coef": 3.8750851244375197,
+    "se": 0.2970646833827355,
+    "p": 6.82286568414384e-39,
+    "OR": 48.18679999076399,
+    "OR_ci": [
+     26.91944919960777,
+     86.25613682258118
+    ]
+   },
+   "ar": {
+    "coef": 0.49901993974648234,
+    "se": 0.23064125024899298,
+    "p": 0.03049355265229552,
+    "OR": 1.6471062160682859,
+    "OR_ci": [
+     1.0480920289312827,
+     2.5884739241621118
+    ]
+   },
+   "hit:ar": {
+    "coef": -1.3607550865320883,
+    "se": 0.4264070875917481,
+    "p": 0.0014167765825807287,
+    "OR": 0.256467049007449,
+    "OR_ci": [
+     0.11119191340761243,
+     0.5915479391515367
+    ]
+   }
+  },
+  "wiki": {
+   "hit": {
+    "coef": 2.6129569843857494,
+    "se": 0.23484877932259896,
+    "p": 9.361684522703247e-29,
+    "OR": 13.63932254490078,
+    "OR_ci": [
+     8.607740315025751,
+     21.61207386322994
+    ]
+   },
+   "ar": {
+    "coef": -0.369121391365693,
+    "se": 0.3131427167516295,
+    "p": 0.23849212492268612,
+    "OR": 0.6913414824696282,
+    "OR_ci": [
+     0.374235560763888,
+     1.2771449201879899
+    ]
+   },
+   "hit:ar": {
+    "coef": 0.396114835175094,
+    "se": 0.35534791093874984,
+    "p": 0.26496872456048737,
+    "OR": 1.4860399574121792,
+    "OR_ci": [
+     0.7405558158306237,
+     2.981969363846933
+    ]
+   }
+  }
+ },
+ "strata": [
+  {
+   "domain": "quran",
+   "language": "ar",
+   "judge_label": "ABSTAINED",
+   "N": 303,
+   "n": 15
+  },
+  {
+   "domain": "quran",
+   "language": "ar",
+   "judge_label": "PARTIALLY_SUPPORTED",
+   "N": 104,
+   "n": 20
+  },
+  {
+   "domain": "quran",
+   "language": "ar",
+   "judge_label": "SUPPORTED",
+   "N": 417,
+   "n": 30
+  },
+  {
+   "domain": "quran",
+   "language": "ar",
+   "judge_label": "UNSUPPORTED",
+   "N": 41,
+   "n": 15
+  },
+  {
+   "domain": "quran",
+   "language": "ms",
+   "judge_label": "ABSTAINED",
+   "N": 332,
+   "n": 15
+  },
+  {
+   "domain": "quran",
+   "language": "ms",
+   "judge_label": "PARTIALLY_SUPPORTED",
+   "N": 68,
+   "n": 20
+  },
+  {
+   "domain": "quran",
+   "language": "ms",
+   "judge_label": "SUPPORTED",
+   "N": 561,
+   "n": 30
+  },
+  {
+   "domain": "quran",
+   "language": "ms",
+   "judge_label": "UNSUPPORTED",
+   "N": 19,
+   "n": 15
+  },
+  {
+   "domain": "wiki",
+   "language": "ar",
+   "judge_label": "ABSTAINED",
+   "N": 605,
+   "n": 15
+  },
+  {
+   "domain": "wiki",
+   "language": "ar",
+   "judge_label": "PARTIALLY_SUPPORTED",
+   "N": 168,
+   "n": 20
+  },
+  {
+   "domain": "wiki",
+   "language": "ar",
+   "judge_label": "SUPPORTED",
+   "N": 1073,
+   "n": 30
+  },
+  {
+   "domain": "wiki",
+   "language": "ar",
+   "judge_label": "UNSUPPORTED",
+   "N": 74,
+   "n": 15
+  },
+  {
+   "domain": "wiki",
+   "language": "ms",
+   "judge_label": "ABSTAINED",
+   "N": 436,
+   "n": 15
+  },
+  {
+   "domain": "wiki",
+   "language": "ms",
+   "judge_label": "PARTIALLY_SUPPORTED",
+   "N": 217,
+   "n": 20
+  },
+  {
+   "domain": "wiki",
+   "language": "ms",
+   "judge_label": "SUPPORTED",
+   "N": 1223,
+   "n": 30
+  },
+  {
+   "domain": "wiki",
+   "language": "ms",
+   "judge_label": "UNSUPPORTED",
+   "N": 59,
+   "n": 15
+  }
+ ],
+ "raw_agreement": [
+  223.0,
+  320.0,
+  0.696875
+ ],
+ "raw_unsupported_human": {
+  "human_unsup_n": 52.0,
+  "judge_unsup_n": 60.0,
+  "both": 31.0
+ }
+}

@@ -25,7 +25,7 @@ tags:
 
 ## Dataset Summary
 
-AM-RAGBench is a human-verified question-answering benchmark for evaluating retrieval-augmented generation (RAG) faithfulness in Arabic and Malay. It spans two domains: a specialized domain (the Quran, using the Arabic source text and the Basmeih Malay translation) and a general domain (Arabic and Malay Wikipedia, used as a control set). The benchmark contains 1,140 question-answer pairs, each paired with a gold passage and a human verification decision made during construction.
+AM-RAGBench is a human-reviewed question-answering benchmark for evaluating retrieval-augmented generation (RAG) faithfulness in Arabic and Malay. It spans two domains: a specialized domain (the Quran, using the Arabic source text and the Basmeih Malay translation) and a general domain (Arabic and Malay Wikipedia, used as a control set). The benchmark contains 1,140 question-answer pairs, each paired with a gold passage and a human verification decision made during construction.
 
 Almost all existing RAG faithfulness and hallucination benchmarks are English-only. AM-RAGBench targets a bilingual pair chosen for a real, non-arbitrary reason: Arabic and Malay share substantial content overlap through the Quran's translation tradition, while remaining typologically distant (Semitic vs. Austronesian, different scripts), which supports faithfulness research beyond high-resource Western languages.
 
