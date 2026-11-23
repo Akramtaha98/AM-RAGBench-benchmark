@@ -1,0 +1,6 @@
+nohup: ignoring input
+[11:42:15] start try1: python3 src/h200/gen_batch.py --model Qwen/Qwen2.5-32B-Instruct --util 0.90
+[11:48:31] ok
+[11:48:31] start try1: python3 src/h200/gen_batch.py --model google/gemma-2-9b-it --util 0.5
+[11:48:46] ok
+[11:48:46] generation stages done; waiting for 72B download

@@ -1,0 +1,11 @@
+nohup: ignoring input
+[11:55:00] 72B download start (32 workers)
+[11:58:49] download stalled at 23764MB -> restart
+[12:01:10] download stalled at 23863MB -> restart
+[12:08:59] download stalled at 32012MB -> restart
+du: cannot access '/home/akram/.cache/huggingface/hub/models--Qwen--Qwen2.5-72B-Instruct/blobs/84b7078fc68cdb4992a6de10bfb666117a32a8f6e7aef7a132b7033d83ec1d05.83d9377e.incomplete': No such file or directory
+[12:19:10] download stalled at 42199MB -> restart
+[12:28:18] 72B download complete
+[12:28:18] start try1: python3 src/h200/judge_batch.py --judge Qwen/Qwen2.5-72B-Instruct --quant fp8 --util 0.90
+[13:12:49] ok
+[13:12:49] done. gen=36 judged=108

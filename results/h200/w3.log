@@ -1,0 +1,611 @@
+W1123 11:11:25.918000 2651524 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1123 11:11:25.919000 2651524 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1123 11:11:25.919000 2651524 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/huggingface_hub/constants.py:302: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+(MainProcess pid=2651524) INFO 11-23 11:11:34 [startup.py:96] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'seed': 1, 'max_model_len': 4096, 'gpu_memory_utilization': 0.28, 'disable_log_stats': True, 'model': 'inceptionai/jais-family-13b-chat'}
+[transformers] A new version of the following files was downloaded from https://huggingface.co/inceptionai/jais-family-13b-chat:
+- configuration_jais.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+[transformers] A new version of the following files was downloaded from https://huggingface.co/inceptionai/jais-family-13b-chat:
+- modeling_jais.py
+. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61] Unable to load modeling_jais.JAISModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61] Unable to load modeling_jais.JAISLMHeadModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:44 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISForQuestionAnswering from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISForSequenceClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISForTokenClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISLMHeadModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISForQuestionAnswering from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISForSequenceClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Unable to load modeling_jais.JAISForTokenClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:45 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+retrying with max_model_len=2048: 1 validation error for ModelConfig
+  Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want 
+(MainProcess pid=2651524) INFO 11-23 11:11:46 [startup.py:96] non-default args: {'trust_remote_code': True, 'dtype': 'bfloat16', 'seed': 1, 'max_model_len': 2048, 'gpu_memory_utilization': 0.28, 'disable_log_stats': True, 'model': 'inceptionai/jais-family-13b-chat'}
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Unable to load modeling_jais.JAISModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Unable to load modeling_jais.JAISLMHeadModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Unable to load modeling_jais.JAISForQuestionAnswering from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Unable to load modeling_jais.JAISForSequenceClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Unable to load modeling_jais.JAISForTokenClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Unable to load modeling_jais.JAISModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:47 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Unable to load modeling_jais.JAISLMHeadModel from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Unable to load modeling_jais.JAISForQuestionAnswering from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Unable to load modeling_jais.JAISForSequenceClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Unable to load modeling_jais.JAISForTokenClassification from inceptionai/jais-family-13b-chat on HF Hub.
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 51, in main
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     llm = load(a.max_model_len)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]           ^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     self.llm_engine = LLMEngine.from_engine_args(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     vllm_config = engine_args.create_engine_config(usage_context)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     model_config = self.create_model_config()
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return ModelConfig(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     For further information visit https://errors.pydantic.dev/2.14/v/value_error
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] During handling of the above exception, another exception occurred:
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] 
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] Traceback (most recent call last):
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/transformers_utils/dynamic_module.py", line 43, in try_get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_from_dynamic_module(
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 625, in get_class_from_dynamic_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     return get_class_in_module(class_name, final_module, force_reload=force_download)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/dynamic_module_utils.py", line 309, in get_class_in_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     module_spec.loader.exec_module(module)
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]   File "/home/akram/.cache/huggingface/modules/transformers_modules/inceptionai/jais_hyphen_family_hyphen_13b_hyphen_chat/0ef8b4f80429609890816d912b331d3b95864707/modeling_jais.py", line 38, in <module>
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61]     from transformers.pytorch_utils import Conv1D, find_pruneable_heads_and_indices, prune_conv1d_layer
+(MainProcess pid=2651524) WARNING 11-23 11:11:48 [dynamic_module.py:61] ImportError: cannot import name 'find_pruneable_heads_and_indices' from 'transformers.pytorch_utils' (/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/transformers/pytorch_utils.py)
+Traceback (most recent call last):
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 81, in <module>
+    main()
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 54, in main
+    llm = load(2048)
+          ^^^^^^^^^^
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/src/h200/gen_batch.py", line 48, in load
+    return LLM(a.model, dtype="bfloat16", max_model_len=mml, trust_remote_code=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/entrypoints/llm.py", line 352, in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/v1/engine/llm_engine.py", line 183, in from_engine_args
+    vllm_config = engine_args.create_engine_config(usage_context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2313, in create_engine_config
+    model_config = self.create_model_config()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 2025, in create_model_config
+    return ModelConfig(
+           ^^^^^^^^^^^^
+  File "/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+    s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+  Value error, Model architecture JAISLMHeadModel was supported in vLLM until v0.22.0, and is not supported anymore. Please use an older version of vLLM if you want to use this model architecture. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+    For further information visit https://errors.pydantic.dev/2.14/v/value_error

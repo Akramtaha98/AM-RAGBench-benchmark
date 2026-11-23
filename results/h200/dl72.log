@@ -1,0 +1,5 @@
+/home/akram/amragbench/AM-RAGBench-benchmark/.venv/lib/python3.12/site-packages/huggingface_hub/constants.py:302: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+Fetching 47 files:   0%|          | 0/47 [00:00<?, ?it/s]Fetching 47 files:  81%|████████  | 38/47 [08:48<02:05, 13.91s/it]Fetching 47 files:  89%|████████▉ | 42/47 [08:48<01:00, 12.09s/it]Fetching 47 files:  96%|█████████▌| 45/47 [09:00<00:24, 12.09s/it]Fetching 47 files:  98%|█████████▊| 46/47 [09:06<00:10, 10.90s/it]Fetching 47 files: 100%|██████████| 47/47 [09:06<00:00, 11.63s/it]
+[32m✓ Downloaded[0m
+  path: /home/akram/.cache/huggingface/hub/models--Qwen--Qwen2.5-72B-Instruct/snapshots/495f39366efef23836d0cfae4fbe635880d2be31
