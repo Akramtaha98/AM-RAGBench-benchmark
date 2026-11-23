@@ -1,4 +1,4 @@
-id,language,domain,original_decision,second_annotator_decision,status,in_released_benchmark
+id,language,domain,original_decision,ai_assisted_second_pass_decision,status,in_released_benchmark
 ar-wiki-1438-2-q1,arabic,wiki,approve,edit,unadjudicated_disagreement,yes
 ar-wiki-1360-1-q2,arabic,wiki,approve,edit,unadjudicated_disagreement,yes
 ar-wiki-1432-2-q2,arabic,wiki,approve,edit,unadjudicated_disagreement,yes

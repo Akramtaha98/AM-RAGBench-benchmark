@@ -56,7 +56,8 @@ Arabic (`ar`) and Malay (`ms`).
 | `quran_ar_CC-BY-4.0.jsonl` (`quran_ar`) | 173 | Quran, Arabic |
 | `quran_ms_CC-BY-NC-4.0.jsonl` (`quran_ms`) | 196 | Quran, Malay |
 | `wiki_CC-BY-SA-4.0.jsonl` (`wiki`) | 771 | Wikipedia, 384 Arabic and 387 Malay |
-| `unadjudicated_disagreements.csv` | 44 rows | Second-annotator disagreements (see below) |
+| `unadjudicated_disagreements.csv` | 44 rows | Disagreements between the original decision and the AI-assisted second pass (see below) |
+| `llm_suggested_edits.csv` | 44 rows | Candidate corrections proposed by an AI-assisted pass. **Unverified, not human adjudication**; the released records are unchanged |
 | `answerability_flags.csv` | 36 records | Records whose gold answer shares no word with the gold passage (candidates for manual review) |
 
 ### Data Instance
@@ -105,15 +106,15 @@ Candidate questions were drafted with a language model (Qwen3.5, 4B parameters),
 
 ### Validation
 
-- **Independent second annotators.** Two annotators (volunteers with a computer-science background, one fluent in Arabic and one in Malay) re-reviewed a stratified sample of 150 records per language (300 in total) without seeing the original decision. Observed agreement with the original decision on the released text is 86.7% (Arabic) and 84.0% (Malay); Cohen's kappa is low (0.36 and 0.20) because almost all records are approved, and Gwet's AC1 is 0.85 and 0.82.
-- **Unresolved disagreements.** `unadjudicated_disagreements.csv` lists the 44 sampled records on which the second annotator still disagrees (20 Arabic, 24 Malay). These have **not been adjudicated**. 39 are in the released data (`in_released_benchmark = yes`); 5 were rejected in primary review and are not released. Users who need the most conservative subset can exclude the 39 released records or re-evaluate them.
+- **AI-assisted second pass (not independent human verification).** A second pass over a stratified sample of 150 records per language (300 in total) was produced with the help of an AI model, on sheets that did not show the original decision. No second human reviewed these records. Observed agreement of this pass with the original human decision on the released text is 86.7% (Arabic) and 84.0% (Malay); Cohen's kappa is low (0.36 and 0.20) because almost all records are approved, and Gwet's AC1 is 0.85 and 0.82.
+- **Unresolved disagreements.** `unadjudicated_disagreements.csv` lists the 44 sampled records on which the AI-assisted second pass still disagrees with the original decision (20 Arabic, 24 Malay). These have **not been adjudicated by a human**. An AI-assisted pass proposed edits for 41 records and removal of 3 (`llm_suggested_edits.csv`); these proposals are unverified and the released records are unchanged. 39 are in the released data (`in_released_benchmark = yes`); 5 were rejected in primary review and are not released. Users who need the most conservative subset can exclude the 39 released records or re-evaluate them.
 - **Answerability flags.** `answerability_flags.csv` lists 36 records whose gold answer shares no word with the gold passage. This lexical screen is a list of candidates for review, not a verified error rate. Excluding these records and the 39 unresolved ones does not change the main results of the paper.
 
 ## Considerations for Using the Data
 
 - **Not a religious authority.** Review covered factual and semantic soundness of each question–answer–passage triple. It is not a claim of tafsīr or other theological authority, and the Quran subset has not been reviewed by a specialist in Quranic exegesis. Do not use model outputs evaluated with this benchmark as religious guidance.
 - **Unmatched question sets.** Arabic and Malay questions were drafted independently, so the two languages are compared on comparable but not translation-matched questions. Language is confounded with question difficulty and passage choice.
-- **Single primary reviewer.** All records were first reviewed by one person; independent review covers a 300-record sample.
+- **Single primary reviewer.** All records were first reviewed by one person; only a 300-record sample received a second pass, and that pass was AI-assisted, not human.
 - **Text artifacts.** An automatic screen found empty brackets left from stripped markup in 14 Arabic and 69 Malay Wikipedia records; these were not normalized.
 - **Scope.** The benchmark covers two domains and two languages and should not be assumed to generalize.
 
@@ -126,7 +127,7 @@ Check the licence of the file you use.
 | `quran_ar_CC-BY-4.0.jsonl` | CC BY 4.0 | Tanzil.net Arabic text, CC BY 3.0: attribution required, verbatim copies only. |
 | `quran_ms_CC-BY-NC-4.0.jsonl` | CC BY-NC 4.0 (non-commercial research use only) | Basmeih Malay translation, distributed by Tanzil.net for non-commercial use only. **We grant no licence to the translation itself**; its terms are set by the translator, the publisher, and Tanzil. Gold answers in this file quote the translation and are covered by the same restriction. |
 | `wiki_CC-BY-SA-4.0.jsonl` | CC BY-SA 4.0, including questions and answers derived from the passages | Wikipedia text, CC BY-SA 4.0. Attribute the Wikipedia articles named in `source_citation`; revision identifiers are not available. |
-| `unadjudicated_disagreements.csv`, `answerability_flags.csv` | CC BY 4.0 (annotation metadata only; the quoted passage excerpts and questions keep the licence of the file they come from) | — |
+| `unadjudicated_disagreements.csv`, `llm_suggested_edits.csv`, `answerability_flags.csv` | CC BY 4.0 (annotation metadata only; the quoted passage excerpts and questions keep the licence of the file they come from) | — |
 
 The earlier combined files `quran_verified.jsonl` and `wiki_verified.jsonl` mixed these terms under one licence statement and have been removed. If you downloaded them, use the per-licence files instead.
 

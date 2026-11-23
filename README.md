@@ -80,7 +80,7 @@ Almost all existing RAG faithfulness and hallucination benchmarks are English-on
 | Wikipedia (general) | 384 | 387 | 771 |
 | **Total** | **557** | **583** | **1,140** |
 
-Provided as two files: `quran_verified.jsonl` (specialized domain) and `wiki_verified.jsonl` (general domain). No train/dev/test split is defined; this is an evaluation-only benchmark.
+Provided in `data/verified/` as `quran_verified.jsonl` (specialized domain) and `wiki_verified.jsonl` (general domain). No train/dev/test split is defined; this is an evaluation-only benchmark.
 
 ## Dataset Creation
 
@@ -97,11 +97,11 @@ Candidate questions were drafted independently per language and per passage (not
 
 - Verification confirmed factual and semantic soundness of each question-answer-passage triple. For the Quran sub-corpus, this is not a claim of interpretive or theological authority, and general Arabic fluency is a different competency from expertise in Quranic exegesis specifically.
 - The benchmark is drawn from two domains only (a specialized religious-text domain and general encyclopedic text); results should not be assumed to generalize to arbitrary domains without further validation.
-- Construction verification was originally performed by a single primary annotator per the process above, later partially cross-checked by independent second annotators on a sample.
+- Construction verification was performed by a single human annotator (the author). A second pass over a stratified sample of 300 records was produced with AI assistance; it is a consistency check, not independent human verification. The 320 generated answers used to calibrate the 72B judge were labelled by human volunteers (a separate sample).
 
 ## Licensing Information
 
-Licences differ by subset. One file per licence is provided in `data/verified/licence_split/`; the combined files `quran_verified.jsonl` and `wiki_verified.jsonl` mix licences and are provided for convenience, so use the per-licence files when the licence matters.
+Licences differ by subset. One file per licence is provided in `data/verified/licence_split/`; the combined files `data/verified/quran_verified.jsonl` and `data/verified/wiki_verified.jsonl` mix licences and are provided for convenience, so use the per-licence files when the licence matters.
 
 | File | Records | Licence |
 |---|---|---|
